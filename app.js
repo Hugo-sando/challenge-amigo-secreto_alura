@@ -12,6 +12,7 @@ function agregarAmigo() {
         document.getElementById("amigo").value = " "; 
         document.getElementById("amigo").focus(); 
         actualizarLista();
+        document.getElementById("resultado").innerHTML = "Ingresando amigos...";
     }
 }
 
@@ -51,6 +52,7 @@ function sortearAmigo() {
 
     amigos = amigos.filter(amigo => amigo !== seleccionado);
     if (amigos.length === 0) {
+        resultado.innerHTML = `<li> Tu amigo secreto es: <strong>${seleccionado}</strong></li>`;
         alert("No quedan más amigos para sortear.");
         actualizarLista();
         document.getElementById("amigo").focus();
